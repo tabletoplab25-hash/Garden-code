@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Garden Code – Prototype</title>
+  <style>
+    body {
+      font-family: system-ui, sans-serif;
+      background: #f5f8f5;
+      text-align: center;
+      padding: 60px;
+      color: #2d3a2d;
+    }
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 0.3em;
+      color: #2d5a27;
+    }
+    p { margin-bottom: 2em; }
+    a {
+      display: inline-block;
+      margin: 10px;
+      padding: 12px 20px;
+      text-decoration: none;
+      border-radius: 8px;
+      background: #2d5a27;
+      color: white;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+    a:hover { background: #3e7a3e; }
+  </style>
+</head>
+<body>
+  <h1>🌿 Garden Code</h1>
+  <p>Prototype materials</p>
+
+  <a href="garden rulebook.html">📖 Rulebook</a>
+  <a href="garden webapp.html">🎮 Web App</a>
+</body>
+</html>
