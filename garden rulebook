@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Garden Code — Rulebook (Playtest Draft)</title>
+<style>
+  :root{
+    --bg:#f7faf7; --paper:#ffffff; --ink:#1c2a1c; --muted:#5a6b5a;
+    --accent:#2d5a27; --accent-2:#89c07a; --edge:#e7eee7;
+    --g:#f5d580; --b:#1e7a2f; --a:#6fc0ff; --r:#8a96a6;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.35}
+  .wrap{max-width:1040px;margin:20px auto;padding:16px}
+  header{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+  h1{font-size:32px;margin:0;color:var(--accent)}
+  .btn{background:linear-gradient(180deg,var(--accent),#234d22);color:#fff;border:none;border-radius:10px;padding:10px 14px;font-weight:700;cursor:pointer}
+
+  .card{background:var(--paper);border:2px solid var(--edge);border-radius:14px;padding:16px;margin:10px 0}
+  h2{margin:0 0 8px;color:var(--accent)}
+  h3{margin:12px 0 6px;color:#2f4f2f}
+  .cols{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .small{color:var(--muted);font-size:13px}
+  ul{margin:6px 0 6px 18px}
+  .tag{display:inline-block;border:1px solid var(--edge);border-radius:999px;padding:2px 8px;font-size:12px;background:#f0f7f0;color:#2f4f2f;margin-right:6px}
+  .call{background:#f3fff4;border-left:6px solid var(--accent-2)}
+
+  /* Boards like the app */
+  .grid{display:grid;grid-template-columns:repeat(4,56px);gap:4px;background:#333;padding:4px;border-radius:10px;width:max-content;margin:8px 0}
+  .cell{width:56px;height:56px;border-radius:8px;background:#f8f9fa;border:2px solid var(--edge);display:flex;align-items:center;justify-content:center;font-size:28px;position:relative}
+  .hl{outline:3px solid #ffd166}
+  .il{outline:3px solid #d9534f; box-shadow: inset 0 0 0 3px #ffd6d6; background:linear-gradient(135deg,#fff2f2,#ffe1e1)}
+  .wheat{background:radial-gradient(40px 40px at 50% 35%, #fff2c2, var(--g));}
+  .forest{background:radial-gradient(40px 40px at 50% 35%, #5cca74, var(--b));}
+  .water{background:radial-gradient(40px 40px at 50% 35%, #bfe6ff, var(--a));}
+  .rock{background:radial-gradient(40px 40px at 50% 35%, #c2c9d6, var(--r));}
+  .ins{position:absolute;right:6px;bottom:4px;font-size:20px}
+
+  .deduction{border-collapse:collapse;margin-top:6px}
+  .deduction td,.deduction th{border:1px solid var(--edge);padding:4px 6px;text-align:center;font-size:12px}
+
+  @media print{header .btn{display:none} body{background:#fff} .wrap{margin:0}}
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>🌿 Garden Code — Rulebook</h1>
+      <button class="btn" onclick="window.print()">🖨️ Print</button>
+    </header>
+
+    <!-- 1) Components -->
+    <section class="card" id="components">
+      <h2>1) Components</h2>
+      <ul>
+        <li>80 <strong>Tiles</strong> (terrains: 🌾 Wheat, 🌲 Forest, 💧 Water, 🗿 Rock) — many tiles feature insects (🐝 Bee, 🦋 Butterfly, ✨ Firefly).</li>
+        <li>Rule cards divided into two categories: <strong>Terrain</strong> and <strong>Insect</strong> (10 or 15 per category depending on difficulty).</li>
+        <li>Deduction sheets + pencils for each player.</li>
+        <li>1 Tile bag.</li>
+      </ul>
+    </section>
+
+    <!-- 2) Objective -->
+    <section class="card" id="objective">
+      <h2>2) Objective</h2>
+      Build your personal <strong>4×4 Garden</strong> while respecting your secret rules and deducing those of your opponents. The first to identify the target number of rules wins immediately.
+    </section>
+
+    <!-- 3) Setup & Difficulty -->
+    <section class="card" id="setup">
+      <h2>3) Setup & Difficulty</h2>
+      <div class="tag">Family</div> Draw <strong>4 rules</strong>: 2×Terrain + 2×Insect. Goal: find 4 rules.<br/>
+      <div class="tag">Expert</div> Draw <strong>6 rules</strong>: 3×Terrain + 3×Insect. Goal: find 5 rules.<br/>
+<div class="tag">PRO</div> Shuffle all cards then draw <strong> 6 rules</strong> mixed. Goal: find 5 rules.
+      <h3>Starting Clues (optional)</h3>
+      Reveal 1–3 rules that are not in play; all players cross them out on their deduction sheet.
+      <h3>First Player</h3>
+      Choose a starting player at random.
+    </section>
+
+    <!-- Placement Rules BOX (merged from examples version) -->
+    <section class="card call" id="placement-rules">
+      <h2>Placement Rules</h2>
+      <ol>
+        <li><strong>First tile</strong> must be placed on the <strong>edge</strong> (any of the 12 border cells).</li>
+        <li>All next tiles must be placed <strong>orthogonally adjacent</strong> to an existing tile (no diagonals).</li>
+        <li>You <strong>may not</strong> place a tile that would <strong>break your secret rules</strong>.</li>
+        <li>If you cannot place the drawn tile, you must <strong>reveal 1 rule per category</strong> that you do <em>not</em> have (Terrain + Insect).</li>
+      </ol>
+      <div class="small">Highlight legend: <span style="padding:2px 6px;border:1px solid #ffd166;background:#fff7cc;border-radius:6px">Yellow outline</span> = legal; <span style="padding:2px 6px;border:1px solid #d9534f;background:#ffd6d6;border-radius:6px">Red outline</span> = illegal.</div>
+    </section>
+ <!-- Examples (REPLACED with fixed grids) -->
+    <section class="card" id="examples">
+      <h2> Examples</h2>
+
+      <h3>A) First tile on the <em>edge</em></h3>
+      <p>Valid starting placements are the 12 edge cells (corners included). They are highlighted below.</p>
+      <div class="grid">
+        <!-- Row 1 -->
+        <div class="cell hl"></div><div class="cell hl"></div><div class="cell hl"></div><div class="cell hl"></div>
+        <!-- Row 2 -->
+        <div class="cell hl"></div><div class="cell"></div><div class="cell"></div><div class="cell hl"></div>
+        <!-- Row 3 -->
+        <div class="cell hl"></div><div class="cell"></div><div class="cell"></div><div class="cell hl"></div>
+        <!-- Row 4 -->
+        <div class="cell hl"></div><div class="cell hl"></div><div class="cell hl"></div><div class="cell hl"></div>
+      </div>
+
+      <h3>B) Orthogonal adjacency only (no diagonals)</h3>
+      <p>After placing the first tile (🌾) at top-left, the only legal cells are <em>right</em> and <em>down</em>. Diagonals are not legal.</p>
+      <div class="grid">
+        <!-- Row 1 -->
+        <div class="cell wheat">🌾</div><div class="cell hl"></div><div class="cell"></div><div class="cell"></div>
+        <!-- Row 2 -->
+        <div class="cell hl"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+        <!-- Row 3 -->
+        <div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+        <!-- Row 4 -->
+        <div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+      </div>
+
+      <h3>C) Illegal placement forces a reveal</h3>
+      <p><strong>Turn 1:</strong> You place <span class="water">💧</span><span class="small">+🦋</span> on the top edge (legal). <br>
+         <strong>Turn 2:</strong> You've the rule "🦋have no adjacent other Butterflies” and draw <span class="rock">🗿</span><span class="small">+🦋</span>. Placing it there would make two Butterflies orthogonally adjacent → <em>illegal</em>. You cannot place it therefore you must reveal 1 Terrain rule and 1 Insect rule you <em>do not</em> have.</p>
+      <div class="grid">
+        <!-- Row 1 -->
+        <div class="cell water">💧<div class="ins">🦋</div></div>
+        <div class="cell il">🗿<div class="ins">🦋</div></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <!-- Row 2 -->
+        <div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+        <!-- Row 3 -->
+        <div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+        <!-- Row 4 -->
+        <div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+      </div>
+      <p class="small">From this situation, opponents can infer that you might have <em>“no adjacent Butterflies” or "no rocks on borders"</em> <u>or</u> <em>“Rock not adjacent to Water”</em>. </p>
+    </section>
+
+
+
+    <!-- 4) Turn Structure -->
+    <section class="card" id="flow">
+      <h2>4) Turn Structure</h2>
+      On your turn:
+      <ol>
+        <li><strong>Placement step:</strong> Draw 1 tile from the bag. If you can place it legally, you must. If you cannot, you must reveal 1 rule you do <em>not</em> have from each category (Terrain + Insect).</li>
+        <li><strong>Deduction step (optional):</strong> You may attempt to guess one rule of another player.</li>
+      </ol>
+    </section>
+
+    <!-- 5) Deductions & Penalties -->
+    <section class="card" id="deduction">
+      <h2>5) Deductions & Penalties</h2>
+      <div class="cols">
+        <div class="call card">
+          <h3>✅ Correct deduction</h3>
+          <ul>
+            <li>You immediately score +1 point.</li>
+            <li>All players mark that opponent as having that rule on their sheet.</li>
+          </ul>
+        </div>
+        <div class="call card">
+          <h3>❌ Wrong deduction</h3>
+          <ul>
+            <li>All players cross out that rule for that opponent.</li>
+            <li><strong>Penalty A:</strong> You must immediately repeat step A of your turn (draw another tile and either place it or reveal rules). No deduction is allowed during this penalty action.</li>
+            <li><strong>Penalty B(only in 2 players):</strong> Take a Silence token. On your next normal turn you cannot attempt a deduction. Discard the token at the end of that turn.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6) End of Game -->
+    <section class="card" id="end">
+      <h2>6) End of Game</h2>
+      <ul>
+        <li><strong>Family:</strong> First to 4 correct deductions wins.</li>
+        <li><strong>Expert & Pro:</strong> First to 5 correct deductions wins.</li>
+      </ul>
+    </section>
+
+    <!-- 7) Deduction Sheet -->
+    <section class="card" id="sheet">
+      <h2>7) Deduction Sheet</h2>
+      <p>Track which player has which rule. Use ✓ for confirmed, ✗ for disproved. Add notes as needed.</p>
+      <table class="deduction">
+        <tr><th>Rule</th><th>Player A</th><th>Player B</th><th>Player C</th></tr>
+        <tr><td>Terrain: No Rocks on Borders</td><td>—</td><td>✓</td><td>✗</td></tr>
+        <tr><td>Insect: No Bees Adjacent</td><td>✗</td><td>—</td><td>✓</td></tr>
+      </table>
+    </section>
+
+    <footer class="small" style="text-align:center;margin:16px 0">
+      Garden Code — Playtest draft. © Your Studio. Icons via emoji for prototype use.
+    </footer>
+  </div>
+</body>
+</html>
