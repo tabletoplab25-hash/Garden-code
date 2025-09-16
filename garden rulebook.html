@@ -89,7 +89,7 @@ Return the unchosen ones back in the bag </li>
         <li>All next tiles must be placed <strong>orthogonally adjacent</strong> to an existing tile (no diagonals).</li>
         <li>You <strong>may not</strong> place a tile that would <strong>break your secret rules</strong>.</li>
         <li>If you cannot place the drawn tile, you must <strong>reveal 1 rule </strong> that you do <em>not</em> have (Terrain OR Insect). 
-        i.e.: i don't have the rules I3! obviously there must be a rule that have not yet been deleted </li>
+        i.e.: i don't have the rule I3! obviously there must be a rule that have not yet been deleted </li>
       </ol>
       <div class="small">Highlight legend: <span style="padding:2px 6px;border:1px solid #ffd166;background:#fff7cc;border-radius:6px">Yellow outline</span> = legal; <span style="padding:2px 6px;border:1px solid #d9534f;background:#ffd6d6;border-radius:6px">Red outline</span> = illegal.</div>
     </section>
@@ -151,7 +151,9 @@ Return the unchosen ones back in the bag </li>
       <ol>
         <li><strong>Placement step:</strong> Draw 1 tile from the bag. If you can place it legally, you must. If you cannot, you must reveal 1 rule you do <em>not</em> have a chosen category (Terrain or Insect).</li>
         <li><strong>Deduction step (optional):</strong> You may attempt to guess one rule of another player.</li>
-        <li><strong>Out of game:</strong> If a player has no more clues to mark with an ‘X’—meaning that all of their secret rules have been discovered—they can no longer take turns. Their score remains as it is at that point.</li>
+        <li><strong>Out of game:</strong> If a player has no more own clues to mark with an ‘X’—meaning that all of their secret rules have been discovered—they can no longer take turns. Their score remains as it is at that point.</li>
+        <li><strong>Grid complete:</strong> If you aren't out of game but you've complete your grid you can continue to take turns by revealing your rules (instead of placing tiles) and guessing rules of other rules. </li>
+      </ol>
       </ol>
     </section>
 
@@ -189,7 +191,7 @@ Return the unchosen ones back in the bag </li>
     <!-- 7) Deduction Sheet -->
     <section class="card" id="sheet">
       <h2>7) Deduction Sheet</h2>
-      <p>Track which player has which rule. Use ✓ for confirmed, ✗ for disproved. Add notes as needed.</p>
+      <p>Deduction sheet is secret while grid is public. Track which player has which rule. Use ✓ for confirmed, ✗ for disproved. Add notes as needed.</p>
       <table class="deduction">
         <tr><th>Rule</th><th>Player A</th><th>Player B</th><th>Player C</th></tr>
         <tr><td>Terrain: No Rocks on Borders</td><td>—</td><td>✓</td><td>✗</td></tr>
@@ -198,7 +200,7 @@ Return the unchosen ones back in the bag </li>
     </section>
 
     <footer class="small" style="text-align:center;margin:16px 0">
-      Garden Code — Playtest draft. © Your Studio. Icons via emoji for prototype use.
+      Garden Code
     </footer>
   </div>
 </body>
