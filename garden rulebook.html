@@ -1,50 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Garden Code — Rulebook (Playtest Draft)</title>
-<style>
-  :root{
-    --bg:#f7faf7; --paper:#ffffff; --ink:#1c2a1c; --muted:#5a6b5a;
-    --accent:#2d5a27; --accent-2:#89c07a; --edge:#e7eee7;
-    --g:#f5d580; --b:#1e7a2f; --a:#6fc0ff; --r:#8a96a6;
-  }
-  *{box-sizing:border-box}
-  html,body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.35}
-  .wrap{max-width:1040px;margin:20px auto;padding:16px}
-  header{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
-  h1{font-size:32px;margin:0;color:var(--accent)}
-  .btn{background:linear-gradient(180deg,var(--accent),#234d22);color:#fff;border:none;border-radius:10px;padding:10px 14px;font-weight:700;cursor:pointer}
-
-  .card{background:var(--paper);border:2px solid var(--edge);border-radius:14px;padding:16px;margin:10px 0}
-  h2{margin:0 0 8px;color:var(--accent)}
-  h3{margin:12px 0 6px;color:#2f4f2f}
-  .cols{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-  .small{color:var(--muted);font-size:13px}
-  ul{margin:6px 0 6px 18px}
-  .tag{display:inline-block;border:1px solid var(--edge);border-radius:999px;padding:2px 8px;font-size:12px;background:#f0f7f0;color:#2f4f2f;margin-right:6px}
-  .call{background:#f3fff4;border-left:6px solid var(--accent-2)}
-
-  /* Boards like the app */
-  .grid{display:grid;grid-template-columns:repeat(4,56px);gap:4px;background:#333;padding:4px;border-radius:10px;width:max-content;margin:8px 0}
-  .cell{width:56px;height:56px;border-radius:8px;background:#f8f9fa;border:2px solid var(--edge);display:flex;align-items:center;justify-content:center;font-size:28px;position:relative}
-  .hl{outline:3px solid #ffd166}
-  .il{outline:3px solid #d9534f; box-shadow: inset 0 0 0 3px #ffd6d6; background:linear-gradient(135deg,#fff2f2,#ffe1e1)}
-  .wheat{background:radial-gradient(40px 40px at 50% 35%, #fff2c2, var(--g));}
-  .forest{background:radial-gradient(40px 40px at 50% 35%, #5cca74, var(--b));}
-  .water{background:radial-gradient(40px 40px at 50% 35%, #bfe6ff, var(--a));}
-  .rock{background:radial-gradient(40px 40px at 50% 35%, #c2c9d6, var(--r));}
-  .ins{position:absolute;right:6px;bottom:4px;font-size:20px}
-
-  .deduction{border-collapse:collapse;margin-top:6px}
-  .deduction td,.deduction th{border:1px solid var(--edge);padding:4px 6px;text-align:center;font-size:12px}
-
-  @media print{header .btn{display:none} body{background:#fff} .wrap{margin:0}}
-</style>
-</head>
-<body>
-  <div class="wrap">
+ <div class="wrap">
     <header>
       <h1>🌿 Garden Code — Rulebook</h1>
       <button class="btn" onclick="window.print()">🖨️ Print</button>
@@ -55,7 +9,7 @@
       <h2>1) Components</h2>
       <ul>
         <li>80 <strong>Tiles</strong> (terrains: 🌾 Wheat, 🌲 Forest, 💧 Water, 🗿 Rock) — many tiles feature insects (🐝 Bee, 🦋 Butterfly, ✨ Firefly).</li>
-        <li>Rule cards divided into two categories: <strong>Terrain</strong> and <strong>Insect</strong> (10 or 15 per category depending on difficulty).</li>
+        <li>Rule cards divided into two categories: <strong>Terrain</strong> and <strong>Insect</strong> (12 per category depending on difficulty).</li>
         <li>Deduction sheets + pencils + grid for each player.</li>
         <li>1 Tile bag.</li>
       </ul>
@@ -70,9 +24,14 @@
     <!-- 3) Setup & Difficulty -->
     <section class="card" id="setup">
       <h2>3) Setup & Difficulty</h2>
-      <div class="tag">Family</div> Draw <strong>4 rules</strong>: 2×Terrain + 2×Insect. Goal: find 4 rules.<br/>
-      <div class="tag">Expert</div> Draw <strong>6 rules</strong>: 3×Terrain + 3×Insect. Goal: find 5 rules.<br/>
-<div class="tag">PRO</div> Shuffle all cards then draw <strong> 6 rules</strong> mixed. Goal: find 5 rules.
+      <div class="tag">Family</div>Choose one set (Terrain or Insect) at the beginning of the game and put the other back in the box.
+Shuffle the chosen deck and give 3 rule cards to each player. Goal: find 4 rules.<br/>
+      <div class="tag">Standard</div> Shuffle the two decks separately.
+Give each player 2 Terrain rules and 2 Insect rules. Goal: find 5 rules.<br/>
+<div class="tag">Advanced</div> Same setup as Standard, but each player receives 3 + 3 rules. Goal: find 5 rules.<br/>
+      <div class="tag">Inferno</div> Identical to Advanced, except that both decks are mixed together before dealing.
+This means a player could receive 6 Terrain rules or other wild combinations — only for players who enjoy expert-level challenges! Goal: find 5 rules.<br/>
+
       <h3>Starting Clues (optional)</h3>
       Shuffle all rules cards unsued in an unique deck, now each player look at 1 up to 4 rules not in play (depending by the difficulty and number of players),then mark this secretly on his sheet and discard the cards face down. 
       <h3>First Player</h3>
@@ -83,8 +42,7 @@
     <section class="card call" id="placement-rules">
       <h2>Placement Rules</h2>
       <ol>
-        <li><strong>First tile</strong> must be placed on the <strong>edge</strong> (any of the 12 border cells). At the start of the game, each player simultaneously draw 3 tiles and then choose to place 1 or 2 tiles. 
-Return the unchosen ones back in the bag </li>
+        <li><strong>First tile</strong> must be placed on the <strong>edge</strong> (any of the 12 border cells). At the start of the game, each player simultaneously draw 7 tiles and then place them on their grid, forming the starting grid.  </li>
         <li>All next tiles must be placed <strong>orthogonally adjacent</strong> to an existing tile (no diagonals).</li>
         <li>You <strong>may not</strong> place a tile that would <strong>break your secret rules</strong>.</li>
         <li>If you cannot place the drawn tile, you must <strong>reveal 1 rule </strong> that you do <em>not</em> have (Terrain OR Insect). 
