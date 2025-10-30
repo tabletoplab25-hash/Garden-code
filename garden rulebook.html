@@ -71,12 +71,11 @@
     <section class="card" id="setup">
       <h2>3) Setup & Difficulty</h2>
       <div class="tag">Family</div>Choose one set (Terrain or Insect) at the beginning of the game and put the other back in the box.
-Shuffle the chosen deck and give 3 rule cards to each player. Goal: find 4 rules.<br/>
+Shuffle the chosen deck and give 3 rule cards to each player. Goal: find 3 rules.<br/>
       <div class="tag">Standard</div> Shuffle the two decks separately.
 Give each player 2 Terrain rules and 2 Insect rules. Goal: find 4 rules.<br/>
-<div class="tag">Advanced</div> Same setup as Standard, but each player receives 3 + 3 rules. Goal: find 5 rules.<br/>
-      <div class="tag">Inferno</div> Identical to Advanced, except that both decks are mixed together before dealing.
-This means a player could receive 6 Terrain rules or other wild combinations — only for players who enjoy expert-level challenges! Goal: find 5 rules.<br/>
+<div class="tag">Expert</div> Same setup as Standard, but each player receives 3 + 3 rules. Goal: find 5 rules.<br/>
+    
 
       <h3>Starting Clues (optional)</h3>
       Shuffle all rules cards unsued in an unique deck, now each player look at 1 up to 4 rules not in play (depending by the difficulty and number of players),then mark this secretly on his sheet and discard the cards face down. 
@@ -88,61 +87,59 @@ This means a player could receive 6 Terrain rules or other wild combinations —
     <section class="card call" id="placement-rules">
       <h2>Placement Rules</h2>
       <ol>
-        <li><strong>First tile</strong> must be placed on the <strong>edge</strong> (any of the 12 border cells). At the start of the game, each player simultaneously draw 7 tiles and then place them on their grid, forming the starting grid.  </li>
-        <li>All next tiles must be placed <strong>orthogonally adjacent</strong> to an existing tile (no diagonals).</li>
-        <li>You <strong>may not</strong> place a tile that would <strong>break your secret rules</strong>.</li>
+        <li><strong>Setup Phase:</strong> At the start of the game, each player simultaneously draws 7 random tiles and places them anywhere on their 4×4 grid, following only their secret rules (no adjacency requirements).</li>
+        <li><strong>During the game:</strong> You <strong>may not</strong> place a tile that would <strong>break your secret rules</strong>.</li>
         <li>If you cannot place the drawn tile, you must <strong>reveal 1 rule </strong> that you do <em>not</em> have (Terrain OR Insect). 
-        i.e.: i don't have the rule I3! Obviously there must be a rule that you have not yet been deleted or discovered by other players </li>
+        i.e.: "I don't have the rule I3!" Obviously there must be a rule that you have not yet been deleted or discovered by other players </li>
       </ol>
       <div class="small">Highlight legend: <span style="padding:2px 6px;border:1px solid #ffd166;background:#fff7cc;border-radius:6px">Yellow outline</span> = legal; <span style="padding:2px 6px;border:1px solid #d9534f;background:#ffd6d6;border-radius:6px">Red outline</span> = illegal.</div>
     </section>
- <!-- Examples (REPLACED with fixed grids) -->
+
+
+    <!-- Examples with initial setup -->
     <section class="card" id="examples">
-      <h2> Examples</h2>
+      <h2>Examples</h2>
 
-      <h3>A) First tile on the <em>edge</em></h3>
-      <p>Valid starting placements are the 12 edge cells (corners included). They are highlighted below.</p>
+      <h3>A) Starting Setup: 7 Random Tiles</h3>
+      <p>At the beginning of the game, you draw 7 tiles and place them <strong>anywhere on your grid</strong>, following only your secret rules. Here's an example setup:</p>
       <div class="grid">
         <!-- Row 1 -->
-        <div class="cell hl"></div><div class="cell hl"></div><div class="cell hl"></div><div class="cell hl"></div>
+        <div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell water">💧</div>
         <!-- Row 2 -->
-        <div class="cell hl"></div><div class="cell"></div><div class="cell"></div><div class="cell hl"></div>
-        <!-- Row 3 -->
-        <div class="cell hl"></div><div class="cell"></div><div class="cell"></div><div class="cell hl"></div>
-        <!-- Row 4 -->
-        <div class="cell hl"></div><div class="cell hl"></div><div class="cell hl"></div><div class="cell hl"></div>
-      </div>
-
-      <h3>B) Orthogonal adjacency only (no diagonals)</h3>
-      <p>After placing the first tile (🌾) at top-left, the only legal cells are <em>right</em> and <em>down</em>. Diagonals are not legal.Tip: You should try to place the tiles in such a way as to confuse your opponents.</p>
-      <div class="grid">
-        <!-- Row 1 -->
-        <div class="cell wheat">🌾</div><div class="cell hl"></div><div class="cell"></div><div class="cell"></div>
-        <!-- Row 2 -->
-        <div class="cell hl"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+        <div class="cell water">💧</div><div class="cell rock">🗿</div><div class="cell"></div><div class="cell"></div>
         <!-- Row 3 -->
         <div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
         <!-- Row 4 -->
-        <div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+        <div class="cell wheat">🌾</div><div class="cell forest">🌲</div><div class="cell wheat">🌾</div><div class="cell forest">🌲</div>
       </div>
 
-      <h3>C) Illegal placement forces a reveal</h3>
-      <p><strong>Turn 1:</strong> You place <span class="water">💧</span><span class="small">+🦋</span> on the top edge (legal). <br>
-         <strong>Turn 2:</strong> You've the rule "🦋have no adjacent other Butterflies” and draw <span class="rock">🗿</span><span class="small">+🦋</span>. Placing it there would make two Butterflies orthogonally adjacent → <em>illegal</em>. You cannot place it therefore you must reveal 1 Terrain rule OR 1 Insect rule you <em>do not</em> have.</p>
+      <h3>B) Three Terrain Rules That Respect This Setup</h3>
+      <p>This player has these three secret terrain rules, which this initial placement respects:</p>
+      <ul>
+        <li><strong>Rule 1:</strong> "No two 🗿 (Rocks) orthogonally adjacent" ✓ <span class="small">(Only one rock placed; no adjacency violations)</span></li>
+        <li><strong>Rule 2:</strong> "No two 🌲 (Forests) orthogonally adjacent" ✓ <span class="small">(Both forests at row 4 are separated by 🌾)</span></li>
+        <li><strong>Rule 3:</strong> "All four corners must be different terrains (when filled)" ✓ <span class="small">(Corners are: empty, 💧, 🌾, 🌲 → all different when complete)</span></li>
+      </ul>
+
+      <h3>C) Drawing 🗿: Legal vs Illegal Placements</h3>
+      <p><strong>Later in the game:</strong> You draw another 🗿. Where can you place it?</p>
+      <p>According to Rule 1 ("No two Rocks adjacent"), you can place the rock in <strong>green cells</strong> but NOT in <strong>red cells</strong> (adjacent to the existing 🗿 at position 1,1):</p>
       <div class="grid">
         <!-- Row 1 -->
-        <div class="cell water">💧<div class="ins">🦋</div></div>
-        <div class="cell il">🗿<div class="ins">🦋</div></div>
-        <div class="cell"></div>
-        <div class="cell"></div>
+        <div class="cell hl"></div><div class="cell il"></div><div class="cell hl"></div><div class="cell water">💧</div>
         <!-- Row 2 -->
-        <div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+        <div class="cell water">💧</div><div class="cell rock">🗿</div><div class="cell il"></div><div class="cell hl"></div>
         <!-- Row 3 -->
-        <div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+        <div class="cell hl"></div><div class="cell il"></div><div class="cell hl"></div><div class="cell hl"></div>
         <!-- Row 4 -->
-        <div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+        <div class="cell wheat">🌾</div><div class="cell forest">🌲</div><div class="cell wheat">🌾</div><div class="cell forest">🌲</div>
       </div>
-      <p class="small">From this situation, opponents can infer that you might have <em>“no adjacent Butterflies” or "no rocks on borders"</em> <u>or</u> <em>“Rock not adjacent to Water”</em>. </p>
+      <p class="small">🟢 Green = Legal placement (no violation) | 🔴 Red = Illegal placement (breaks Rule 1)</p>
+
+      <h3>D) Forced Reveal: No Legal Placement</h3>
+      <p>Imagine all remaining cells would violate your rules. Since you have <strong>no legal move</strong>, you must <strong>reveal 1 Terrain rule you do NOT have</strong>.</p>
+      <p class="small"><strong>Example reveal:</strong> "I don't have the Terrain rule 'No 🌾 adjacent to 💧'" (or any other Terrain rule you don't have).</p>
+      <p class="small"><strong>Note (Family difficulty):</strong> In Family mode, you only use either Terrain OR Insect rules. The other category doesn't exist in your game, so you can only reveal rules from the active category.</p>
     </section>
 
 
@@ -186,8 +183,7 @@ This means a player could receive 6 Terrain rules or other wild combinations —
     <section class="card" id="end">
       <h2>6) End of Game</h2>
       <ul>
-        <li><strong>Family:</strong> First to 4 correct deductions wins.</li>
-        <li><strong>Expert & Pro:</strong> First to 5 correct deductions wins.</li>
+        <li>First to 3-4-5 correct deductions wins.</li>
       </ul>
     </section>
 
